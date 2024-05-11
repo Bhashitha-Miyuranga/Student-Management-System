@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-body">
+
+    <form [formGroup]="DepartmentForm">
+      <div class=" justify-content-around center">
+      <h3>New Department</h3>
+        <div style="width: 48%">
+          <label class="form-label">DepartmentID</label>
+          <input class="form-control"  placeholder="DepartmentID" formControlName="departmentID">
+        </div><br>
+
+        <div style="width: 48%">
+          <label class="form-label">Department Name</label>
+          <input class="form-control"  placeholder="Department Name" formControlName="departmentName">
+        </div>
+
+        <div style="width: 48%">
+          <label class="form-label">Status</label>
+          <input class="form-control"  placeholder="Status" formControlName="status">
+        </div>
+      </div>
+
+      <div>
+        <button class="btn btn-dark save-btn"  (click)="savaData()">
+          <p *ngIf="pageType == 'edit'">
+            Update
+          </p>
+          <p *ngIf="pageType == 'new'">
+            Save
+          </p>
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+

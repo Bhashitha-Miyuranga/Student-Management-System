@@ -1,0 +1,59 @@
+<div class="card">
+  <div class="card-body">
+
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-arrow-left-square-fill" viewBox="0 0 16 16" (click)="goBack()">
+        <path d="M16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12zm-4.5-6.5H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5a.5.5 0 0 0 0-1z"/>
+      </svg>
+
+    <span *ngIf="pageType == 'edit'">
+      <h3>Edit Student</h3>
+    </span>
+    <span *ngIf="pageType == 'new'">
+      <h3>New Student</h3>
+    </span>
+
+    <form [formGroup]="studentForm">
+      <div class="d-flex justify-content-around">
+        <div style="width: 48%">
+          <label class="form-label">First Name</label>
+          <input class="form-control"  placeholder="First Name" formControlName="first_Name">
+        </div>
+
+        <div style="width: 48%">
+          <label class="form-label">Last Name</label>
+          <input class="form-control"  placeholder="Last Name" formControlName="last_Name">
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <div style="width: 98%">
+          <label  class="form-label">District</label>
+          <textarea class="form-control" rows="3" placeholder="District" formControlName="district"></textarea>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-around">
+        <div style="width: 98%">
+          <label  class="form-label">Department</label>
+          <select class="form-select" aria-label="Default select example" formControlName="departmentID">
+            <option *ngFor="let department of departments"
+            [value]="department.departmentID">{{department.departmentName}}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button class="btn btn-dark save-btn"  (click)="savaData()">
+          <p *ngIf="pageType == 'edit'">
+            Update
+          </p>
+          <p *ngIf="pageType == 'new'">
+            Save
+          </p>
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+

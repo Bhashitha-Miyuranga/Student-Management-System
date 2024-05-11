@@ -1,0 +1,28 @@
+.login-style{
+  width: 310px;
+  margin: 30px auto;
+}
+
+.login-icn-style {
+  font-style: normal;
+  margin: 25px;
+
+}
+h1{
+  font-size: xxx-large;
+
+}
+
+
+
+.login-btn-style{
+
+  float: right;
+}
+
+.main{
+  margin-top: 160px;
+  margin-bottom: 160px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
